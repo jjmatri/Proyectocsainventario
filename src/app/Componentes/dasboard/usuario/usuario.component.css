@@ -1,0 +1,17 @@
+table {
+    width: 100%;
+ }
+ th, td {
+    text-align: left;
+    padding: 1px;
+  }
+
+  .editar{
+    cursor: pointer;
+    color: #187880;
+   }
+
+   .asignar{
+    cursor: pointer;
+    color: #df0e0e;
+   }

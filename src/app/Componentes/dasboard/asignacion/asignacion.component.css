@@ -1,0 +1,7 @@
+.example-full-width {
+    width: 40%;
+  }
+
+  .mat-mdc-radio-button ~ .mat-mdc-radio-button {
+    margin-left: 16px;
+  }

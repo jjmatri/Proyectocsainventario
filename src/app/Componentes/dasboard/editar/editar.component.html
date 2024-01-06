@@ -1,0 +1,195 @@
+<legend> Editar Articulo</legend>
+  
+<mat-spinner *ngIf="loading" class='spinner'diameter="50"></mat-spinner>
+
+  <form *ngIf="!loading"[formGroup]="firstFormGroup">
+ 
+    <mat-form-field appearance="outline" class="example-full-width text-dark font-weight-bold">
+        <mat-label>Activo fijo</mat-label>     
+          <input   matInput  formControlName="activofijo">      
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" style="position: relative; left: 2%;">
+      <mat-label>Marca</mat-label>     
+        <input  type="text" matInput value="{{marca}}" formControlName="marca">      
+  </mat-form-field>
+
+  <mat-form-field appearance="outline" style="position: relative; left: 4%;">
+    <mat-label>Modelo</mat-label>     
+      <input  type="text" matInput value="{{modelo}}" formControlName="modelo">      
+</mat-form-field>
+
+    <mat-form-field appearance="outline" style="position: relative; left: 6%;">
+        <mat-label>Imei</mat-label>     
+          <input  type="text" matInput value="{{imei}}" formControlName="imei">      
+    </mat-form-field>
+  
+    <mat-form-field appearance="outline" >
+        <mat-label>serialsimcard</mat-label>     
+          <input  type="text" matInput value="{{serialsimcard}}" formControlName="serialsimcard">      
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" style="position: relative; left: 2%;">
+      <mat-label>Numero de celular</mat-label>     
+        <input  type="text" matInput value="{{numerocel}}" formControlName="numerocel">      
+  </mat-form-field>
+<!--
+  <mat-form-field appearance="outline" style="position: relative; left: 4%;">
+      <mat-label>Contraseña sim</mat-label>     
+        <input  type="text" matInput value="{{contrasena_sim}}" formControlName="contrasena_sim">      
+  </mat-form-field>
+-->
+<!--
+  <mat-form-field appearance="outline" style="position: relative; left: 6%;">
+    <mat-label>IP</mat-label>     
+      <input  type="text" matInput value="{{ip}}" formControlName="ip">      
+</mat-form-field>
+-->
+
+<mat-form-field appearance="outline"  style="position: relative; left: 4%;">
+  <mat-label>Seleccionar operador</mat-label> 
+  <mat-select formControlName="cod_operador"  class="example-full-width text-dark font-weight-bold">
+  
+  <mat-option [value]="operador.cod_operador" *ngFor="let operador of operadores"> {{operador.nombre}}
+  </mat-option>
+
+</mat-select>  
+
+</mat-form-field>
+
+<!--<mat-form-field appearance="outline" style="position: relative; left: 4%;" >
+  <mat-label>COD_OPERADOR</mat-label>     
+    <input  type="text" matInput value="{{cod_operador}}" formControlName="cod_operador">      
+</mat-form-field>
+-->
+<!--
+<mat-form-field appearance="outline" style="position: relative; left: 2%;">
+  <mat-label>Puerto</mat-label>     
+    <input  type="text" matInput value="{{puerto}}" formControlName="puerto">      
+</mat-form-field>
+-->
+
+<mat-form-field appearance="outline" style="position: relative; left: 6%;">
+  <mat-label>Seleccionar Estado</mat-label>
+    <mat-select value ={{estado}} formControlName="estado" placeholder="Estado">
+        
+            <mat-option value="activo">activo</mat-option>
+            <mat-option value="no activo">no activo</mat-option>
+            <mat-option value="asignado">asignado</mat-option>
+            <mat-option value="retirado">retirado</mat-option>
+          
+  </mat-select>  
+  
+  </mat-form-field>
+
+
+
+<!--
+<mat-form-field appearance="outline" style="position: relative; left: 4%;">
+  <mat-label>ESTADO</mat-label>     
+    <input  type="text" matInput value="{{estado}}" formControlName="estado">      
+</mat-form-field>
+-->
+<!--
+<mat-form-field appearance="outline" style="position: relative; left: 6%;">
+  <mat-label>Fecha Asignacion</mat-label>     
+    <input  type="text" matInput value="{{fecha_asignacion}}" formControlName="fecha_asignacion">      
+</mat-form-field>
+-->
+
+
+<!--<mat-form-field appearance="outline" style="position: relative; left: 6%;">
+  <mat-label>LOGIN_REGISTRO</mat-label>     
+    <input  type="text" matInput value="{{login_registro}}" formControlName="login_registro">      
+</mat-form-field>
+-->
+
+<mat-form-field appearance="outline" >
+  <mat-label>Seleccionar dispositivo</mat-label> 
+  <mat-select formControlName="cod_tipoarticulo"  class="example-full-width text-dark font-weight-bold">
+  
+  <mat-option [value]="dispositivo.cod_tipoarticulo" *ngFor="let dispositivo of dispositivos"> {{dispositivo.descripcion}}
+  </mat-option>
+
+</mat-select>  
+
+</mat-form-field>
+
+
+<!--
+<mat-form-field appearance="outline"  >
+  <mat-label>COD_TIPOARTICULOA</mat-label>     
+    <input  type="text" matInput value="{{cod_tipoarticulo}}" formControlName="cod_tipoarticulo">      
+</mat-form-field>
+-->
+<!--
+<mat-form-field appearance="outline" style="position: relative; left: 4%;">
+  <mat-label>DESCRIPCION</mat-label>     
+    <input  type="text" matInput value="{{descripcion}}" formControlName="descripcion">      
+</mat-form-field>
+-->
+
+<!--
+<mat-form-field appearance="outline" style="position: relative; left: 2%;">
+  <mat-label><CODe>CODZONA</CODe></mat-label>     
+    <input  type="text" matInput value="{{codzona}}" formControlName="codzona"  >
+          
+</mat-form-field>
+
+<mat-form-field appearance="outline" style="position: relative; left: 4%;">
+  <mat-label>CODPUNTO</mat-label>     
+    <input  type="text" matInput value="{{codpunto}}" formControlName="codpunto" > 
+    <span *ngIf="this.firstFormGroup.get('codpunto')?.errors?.['minlength']" >
+      (Debe tener como mínimo 4 caracteres)
+    </span>
+      
+</mat-form-field>
+-->
+<mat-form-field appearance="outline" style="position: relative; left: 2%;">
+  <mat-label><CODe>nombre</CODe></mat-label>     
+    <input  type="text" [disabled]="false" matInput value="{{nombre}}" formControlName="nombre">      
+</mat-form-field>
+
+
+<mat-form-field appearance="outline" class="example-width" style="position: relative; left: 4%;">
+  <mat-label>Descripcion</mat-label>
+  <textarea rows="4"  [disabled]="false" cols="10" formControlName="descripcion" value="{{descripcion}}" matInput #input id="nomruta" placeholder="descripcion" ></textarea>
+</mat-form-field>
+
+<mat-form-field appearance="fill" >
+  <mat-label>Choose a date</mat-label>
+  <input matInput [matDatepicker]="picker" formControlName="fecha_asignacion">
+  <mat-hint>MM/DD/YYYY</mat-hint>
+  <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+  <mat-datepicker #picker></mat-datepicker>
+</mat-form-field>
+
+
+<section class="example-section" >
+  <mat-checkbox class="example-margin"  (click)="operar()">Disabled</mat-checkbox>
+  <mat-checkbox class="example-margin"  (click)="op()">persona</mat-checkbox>
+</section>
+
+<!--<section class="example-section" style="position: relative; left: 6%;">
+  <mat-checkbox class="example-margin" [(ngModel)]="persona" (click)="op()">persona</mat-checkbox>
+</section>
+-->
+
+<section class="example-section" style="position: relative; left: 8%;">
+  <mat-checkbox class="example-margin" [disabled]="disabled">I'm a checkbox</mat-checkbox>
+</section>
+
+
+<br> 
+    <button  (click)="onSubmit()" mat-raised-button matTooltip="Guardar"  style="margin-left: 250px;" color="primary" >  <mat-icon > save_as</mat-icon>
+      </button>
+    <button  (click)="cerra()" mat-raised-button matTooltip="Cerrar"  style="margin-left: 230px;" color="primary" >  <mat-icon > close</mat-icon>
+      </button>
+<!--
+<mat-form-field appearance="outline" style="position: relative; left: 6%;">
+  <mat-label>Fecha Asignacion</mat-label>     
+    <input  type="text" matInput value="{{fecha_asignacion}}" formControlName="fecha_asignacion">      
+</mat-form-field>
+-->
+    
+  </form>

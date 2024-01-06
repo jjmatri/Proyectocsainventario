@@ -1,0 +1,22 @@
+[
+ {
+ "nombre":"listar",
+ "redirect":"/dasboard/listar"
+ },
+ {
+    "nombre":"registro",
+    "redirect":"/dasboard/regsitro"
+ }, 
+ {
+    "nombre":"Historial de asignaciones",
+    "redirect":"/dasboard/historial"
+ },
+ {
+   "nombre":"Usuario",
+   "redirect":"/dasboard/usuario"
+ },
+ {
+   "nombre":"Articulos Asignados",
+   "redirect":"/dasboard/articulosasignados"
+ }
+]

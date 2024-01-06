@@ -1,0 +1,142 @@
+<mat-label>FORMULARIO DE ASIGNACION</mat-label>
+<!--<mat-spinner *ngIf="loading" class='spinner'diameter="50"></mat-spinner>-->
+<mat-progress-bar *ngIf="loading" mode="indeterminate"></mat-progress-bar>            
+    <form  [formGroup]="firstFormGroup">
+  
+      <br>
+       
+          <mat-form-field appearance="outline" >
+            <mat-label>Activo fijo</mat-label>
+            <input matInput value="{{activofijo}}" disabled >
+            <!--<input  type="text" formControlName="activofijo" matInput   value="{{activofijo}}" id="nomruta" placeholder="Adtivo fijo"  >-->
+
+          </mat-form-field>
+         
+          
+         <mat-form-field appearance="outline" style="position: relative; left: 2%;">
+            <mat-label>Id_articulo</mat-label>
+            <input matInput value="{{id_activo}}" disabled >
+            
+            <!--<input type="text" formControlName="id_activo" matInput   value="{{id_activo}}" id="nomruta" placeholder="idactivo" >-->
+          </mat-form-field>
+        
+          <mat-form-field appearance="outline" style="position: relative; left: 4%;">
+            <mat-label>Imei</mat-label>
+            <input matInput value="{{imei}}" disabled >
+            <!--<input  type="text" formControlName="imei" matInput   value="{{imei}}" id="nomruta" placeholder="imei">-->
+          </mat-form-field>
+          <BR>
+        
+          <mat-form-field appearance="outline" >
+            <mat-label>Serialsimcard</mat-label>
+            <input matInput value="{{serialsimcard}}" disabled >
+            
+            <!--<input type="text" formControlName="serialsimcard" matInput   value="{{serialsimcard}}" id="nomruta" placeholder="serialsimcard">-->
+          </mat-form-field>
+          <!--
+          <mat-form-field appearance="outline" style="position: relative; left: 4%;">
+            <mat-label>Codzona</mat-label>
+            <input type="text" formControlName="codzona" matInput    id="nomruta" placeholder="codzona">
+          </mat-form-field>
+          -->
+                  
+         <!--
+         <mat-form-field appearance="outline" style="position: relative; left: 4%;">
+          <mat-select formControlName="estado" value="{{estado}}" placeholder="Estado">
+            <mat-option value="">{{estado}}</mat-option>
+            <mat-option value="activo">activo</mat-option>
+            <mat-option value="inactivo">asinado</mat-option>
+            <mat-option value="inactivo">retirado</mat-option>
+            <mat-option value="inactivo">no activo</mat-option>
+            
+          </mat-select>  
+    
+          </mat-form-field>
+        -->  
+        <mat-form-field appearance="outline" style="position: relative; left: 4%;">
+          <mat-label>Estado</mat-label>
+          <input matInput value="{{estado}}" disabled >
+            
+          <!--  <input type="text" formControlName="asignado" matInput    id="nomruta" placeholder="ASIGNADO">-->
+        </mat-form-field>
+      
+        
+          
+          <mat-form-field appearance="outline" style="position: relative; left: 6%;">
+            <mat-label>Fecha_creacion</mat-label>
+            <input matInput value="{{fecha_asignacion}}" disabled >
+          
+            <!--<input   type="text" formControlName="fecha_asignacion" matInput   value="{{fecha_asignacion}}" id="nomruta" placeholder="fecha_asignacion">-->
+          </mat-form-field>
+        
+          <mat-form-field class="example-full-width" appearance="fill" style="position: relative; left: 4%;">
+            <mat-label>Descripcion</mat-label>
+            <textarea matInput placeholder="..." formControlName="descripcion"></textarea>
+          </mat-form-field>
+       
+          <mat-radio-group aria-label="Select an option"style="position: relative; left: 6%;" >
+            <mat-radio-button class="example-margin"  (click)="operar()">Persona</mat-radio-button>
+            <mat-radio-button class="example-margin"  (click)="ocultar()">Punto</mat-radio-button>
+          </mat-radio-group>
+          
+          <div *ngIf="elemento == true">
+            
+            <mat-form-field appearance="outline" style="position: relative; left: 2%;">
+               <mat-label>Cedula</mat-label>
+               <input type="text" formControlName="asignado" matInput    id="nomruta" [(ngModel)]="texto2"  (keyup.enter)="buscar()" placeholder="Asignado">
+               
+              </mat-form-field>
+              <mat-form-field appearance="outline" style="position: relative; left: 4%;">
+                <mat-label>Nombre </mat-label>
+                <input matInput value="{{nombre}}" disabled >
+              </mat-form-field>
+               
+                
+           </div>
+          
+           <div *ngIf="elemento == false">
+           
+            <mat-form-field appearance="outline" style="position: relative; left: 2%;">
+             <mat-label>Codpunto</mat-label>
+             <!--<input type="text" formControlName="codpunto" matInput    id="nomruta"  #box (keyup.enter)="buscar(box.value)" placeholder="codpunto">-->
+            <input type="text" formControlName="codpunto" matInput    id="nomruta" [(ngModel)]="texto"  (keyup.enter)="buscarpunto()" placeholder="codpunto">
+            </mat-form-field>
+
+           <mat-form-field appearance="outline" style="position: relative; left: 4%;">
+            <mat-label>Nombre CDA</mat-label>
+            <input matInput value="{{nombrecda}}" disabled >
+          </mat-form-field>
+           
+          <mat-form-field appearance="outline" style="position: relative; left: 6%;">
+            <mat-label>Nombre Punto</mat-label>
+            <input matInput value="{{nombrepunto}}" disabled >
+          </mat-form-field>
+          
+
+           </div>
+          <!--<mat-radio-group aria-label="Select an option">
+            <mat-radio-button value="1">Persona</mat-radio-button>
+            <mat-radio-button value="2">Option 2</mat-radio-button>
+          </mat-radio-group>
+
+          <section class="example-section" >
+            <mat-checkbox class="example-margin"  (click)="operar()">Disabled</mat-checkbox>
+            <mat-checkbox class="example-margin"  (click)="op()">persona</mat-checkbox>
+          </section>
+        -->
+
+ 
+      <br>
+      <br>
+      <br>
+      <button   (click)="onSubmit()"mat-raised-button matTooltip="Asignar"  disabled="{{buttonDisabled}}" style="position: relative; left: 20%;" color="primary"><mat-icon>done</mat-icon>
+  
+      </button>
+     
+      <button  (click)="cerra()" mat-raised-button matTooltip="Cerrar"  style="margin-left: 40%;" color="primary" >  <mat-icon > close</mat-icon>
+      </button>
+ 
+      
+  
+    </form>
+  

@@ -1,0 +1,174 @@
+<mat-label>HISTORIAL DE ASIGNACIONES</mat-label><p>
+    
+<mat-form-field>
+    <mat-label>Buscar</mat-label>
+    <input matInput (keyup)="filtrar($event)" placeholder="buscar">
+  </mat-form-field>
+  
+  <div class="mat-elevation-z8">
+    <mat-paginator [length]="100"
+    [pageSize]="5"
+    [pageSizeOptions]="[5, 10, 25, 100]"
+    aria-label="Select page">
+  </mat-paginator>
+  
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" matSort>
+  
+        <ng-container matColumnDef="id_historial">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Id_historial </th>
+            <td mat-cell *matCellDef="let historial"> {{historial.id_historial}} </td>
+          </ng-container>
+      
+
+
+      <ng-container matColumnDef="id_articulo">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Id_articulo </th>
+        <td mat-cell *matCellDef="let historial"> {{historial.id_articulo}} </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="fecha_asignacion">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Fecha_creacion </th>
+        <td mat-cell *matCellDef="let historial"> {{historial.fecha_asignacion}} </td>
+      </ng-container>
+     
+      <ng-container matColumnDef="cedula_responsable">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Cedula Responsable </th>
+        <td mat-cell *matCellDef="let historial"> {{historial.cedula_responsable}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="imei">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Imei </th>
+        <td mat-cell *matCellDef="let historial"> {{historial.imei}} </td>
+      </ng-container>
+
+     
+      <ng-container matColumnDef="activo_fijo">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Activofijo </th>
+        <td mat-cell *matCellDef="let historial"> {{historial.activo_fijo}} </td>
+      </ng-container>
+  
+      
+      
+      <ng-container matColumnDef="serial">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Serial</th>
+        <td mat-cell *matCellDef="let historial"> {{historial.serial}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="login_registro">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Login_registro </th>
+        <td mat-cell *matCellDef="let historial"> {{historial.login_registro}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="estado">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Estado </th>
+        <td mat-cell *matCellDef="let historial"> {{historial.estado}} </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="descripcion">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>descripcion </th>
+        <td mat-cell *matCellDef="let historial"> {{historial.descripcion}} </td>
+      </ng-container>
+
+      
+
+  <!--
+      <ng-container matColumnDef="serialsimcard">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> serialsimcard </th>
+        <td mat-cell *matCellDef="let articulo"> {{articulo.serialsimcar}} </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="numerocel">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> numero_cel </th>
+        <td mat-cell *matCellDef="let articulo"> {{articulo.numerocel}} </td>
+      </ng-container>
+  
+     
+      <ng-container matColumnDef="cod_operador">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> cod_operador </th>
+        <td mat-cell *matCellDef="let articulo"> {{articulo.cod_operador}} </td>
+      </ng-container>
+  
+      
+    -->
+      
+      
+      
+  <!--
+      <ng-container matColumnDef="descripcion">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> descripcion </th>
+        <td mat-cell *matCellDef="let articulo"> {{articulo.descripcion}} </td>
+      </ng-container>-->
+  <!--
+      <ng-container matColumnDef="codzona">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> codzona </th>
+        <td mat-cell *matCellDef="let articulo"> {{articulo.codzona}} </td>
+      </ng-container>
+      
+      <ng-container matColumnDef="codpunto">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> codpunto </th>
+        <td mat-cell *matCellDef="let articulo"> {{articulo.codpunto}} </td>
+      </ng-container>
+     
+      <ng-container matColumnDef="nombre">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> nombre </th>
+        <td mat-cell *matCellDef="let articulo"> {{articulo.nombre}} </td>
+      </ng-container>
+      
+      <ng-container matColumnDef="nombre_zona">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> nombre_zona </th>
+        <td mat-cell *matCellDef="let articulo"> {{articulo.nombre_zona}} </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="nombre_cda">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> nombre_cda </th>
+        <td mat-cell *matCellDef="let articulo"> {{articulo.nombre_cda}} </td>
+      </ng-container>
+    -->   
+      <!--<ng-container matColumnDef="mostrar">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> MOSTRAR </th>
+        <td mat-cell *matCellDef="let articulo">
+          <button mat-raised-button  (click)="mostrar(articulo.codpunto)" matTooltip="Mostrar">
+  
+          <mat-icon > search</mat-icon> 
+  
+        </button>
+        </td>
+     
+    </ng-container>
+  -->
+  <!--
+    <ng-container matColumnDef="editar">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> EDITAR</th>
+      
+        
+        <td mat-cell *matCellDef="let articulo">
+        
+        <button mat-raised-button (click)="editar(articulo.id_articulo)" class="editar" matTooltip="editar">
+  
+          <mat-icon > edit</mat-icon> 
+  
+        </button>  
+          
+        </td>
+      </ng-container>
+    
+      <ng-container matColumnDef="asignar">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> ASIGNAR</th>
+        
+          
+          <td mat-cell *matCellDef="let articulo">
+          
+          <button mat-raised-button (click)="asignar(articulo.id_articulo)"  class="asignar"matTooltip="asignar">
+    
+            <mat-icon >done</mat-icon> 
+    
+          </button>  
+            
+          </td>
+        </ng-container>
+      
+    -->
+      
+      <tr mat-header-row *matHeaderRowDef="columnas"></tr>
+      <tr mat-row *matRowDef="let row; columns: columnas;"></tr>
+    </table>

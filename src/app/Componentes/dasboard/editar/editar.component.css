@@ -1,0 +1,17 @@
+.example-section {
+    display: flex;
+    align-content: center;
+    align-items: center;
+    /*height: 60px;*/
+    margin: 12px 0;
+  }
+
+  .example-margin {
+    margin: 0 12px;
+    
+  }
+
+  .example-width {
+    width: 40%;
+  }
+  

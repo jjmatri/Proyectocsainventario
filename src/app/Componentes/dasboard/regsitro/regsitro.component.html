@@ -1,0 +1,193 @@
+<div class="container">
+<mat-card>
+
+    <mat-label>FORMULARIO DE ARTICULO</mat-label>
+            
+    <form novalidate [formGroup]="firstFormGroup">
+  
+        <br>
+        
+         
+          <mat-form-field appearance="outline" >
+            <mat-label>Activo fijo</mat-label>
+            <input formControlName="activofijo" matInput #input id="nomruta"  autocomplete="off"placeholder="Activo fijo">
+          </mat-form-field>
+        
+      
+          <mat-form-field appearance="outline" style="position: relative; left: 2%;">
+            <mat-label>Marca</mat-label>
+            <input formControlName="marca" matInput #input id="nomruta" autocomplete="off"placeholder="marca">
+          </mat-form-field>
+  
+          <mat-form-field appearance="outline"style="position: relative; left: 4%;">
+            <mat-label>Modelo</mat-label>
+            <input formControlName="modelo" matInput #input id="nomruta" autocomplete="off"placeholder="modelo">
+          </mat-form-field>
+       
+          <mat-form-field appearance="outline" style="position: relative; left: 6%;">
+            <mat-label>Imei</mat-label>
+            <input formControlName="imei" matInput #input id="nomruta" autocomplete="off"placeholder="imei">
+          </mat-form-field>
+        
+          <mat-form-field appearance="outline" style="position: relative; left: 8%;">
+            <mat-label>Serialsimcard</mat-label>
+            <input formControlName="serialsimcard" matInput #input id="nomruta"autocomplete="off" placeholder="serialsimcard">
+          </mat-form-field>
+         
+          <mat-form-field appearance="outline" style="position: relative; left: 10%;">
+            <mat-label>Numero_cel</mat-label>
+            <input formControlName="numerocel" matInput #input id="nomruta"autocomplete="off" placeholder="numerocel">
+          </mat-form-field>
+         
+          <mat-form-field appearance="outline" >
+            <mat-label>Contrasena_sim</mat-label>
+            <input formControlName="contrasena_sim" matInput #input id="nomruta" autocomplete="off"placeholder="Ccontrasena_sim">
+          </mat-form-field>
+         
+  
+          <mat-form-field appearance="outline" style="position: relative; left: 2%;">
+            <mat-label>Ip</mat-label>
+            <input formControlName="ip" matInput #input id="nomruta" autocomplete="off"placeholder="ip">
+          </mat-form-field>
+         <!--
+          <mat-form-field appearance="outline" style="position: relative; left: 4%;">
+            <mat-label>Cod_operador</mat-label>
+            <input formControlName="cod_operador" matInput #input id="nomruta" autocomplete="off"placeholder="cod_operador">
+          </mat-form-field>
+          -->
+
+          
+          <mat-form-field appearance="outline" style="position: relative; left: 4%;">
+            <mat-label>Puerto</mat-label>
+            <input formControlName="puerto" matInput #input id="nomruta" autocomplete="off"placeholder="puerto">
+          </mat-form-field>
+
+          <mat-form-field appearance="outline"  style="position: relative; left: 6%;">
+            <mat-label>Seleccionar operador</mat-label> 
+            <mat-select formControlName="cod_operador" >
+            
+            <mat-option [value]="operador.cod_operador" *ngFor="let operador of operadores"> {{operador.nombre}}
+            </mat-option>
+          
+          </mat-select>  
+          
+          </mat-form-field>
+          
+         <!--        
+          <mat-form-field appearance="outline" style="position: relative; left: 8%;">
+            <mat-label>Estado</mat-label>
+            <input formControlName="estado" matInput #input id="nomruta" placeholder="estado">
+          </mat-form-field>
+         
+        -->
+        
+        <mat-form-field appearance="outline"  class="example-container" style="position: relative; left: 8%;">
+          <mat-label>Seleccionar dispositivo</mat-label> 
+          <mat-select formControlName="cod_tipoarticulo"  >
+          
+          <mat-option [value]="dispositivo.cod_tipoarticulo" *ngFor="let dispositivo of dispositivos"> {{dispositivo.descripcion}}
+          </mat-option>
+      
+        </mat-select>  
+      
+        </mat-form-field>
+    
+        <mat-form-field appearance="outline" style="position: relative; left: 10%;">
+          <mat-select formControlName="estado" placeholder="Estado">
+          
+            <mat-option value="activo">Activo</mat-option>
+            <mat-option value="no activo">No Activo</mat-option>
+            <mat-option value="asignado">Asignado</mat-option>
+            <mat-option value="retirado">Retirado</mat-option>
+          
+        </mat-select>  
+    
+      </mat-form-field>
+  
+      
+
+
+
+      <!--
+          <mat-form-field appearance="outline" style="position: relative; left: 10%;">
+            <mat-label>cod_tipoarticulo</mat-label>
+            <input formControlName="cod_tipoarticulo" matInput #input id="nomruta" autocomplete="off" placeholder="cod_tipoarticulo">
+          </mat-form-field>
+        -->
+      
+          <!--
+          
+          <mat-form-field appearance="outline" >
+            <mat-label>CODZONA</mat-label>
+            <input formControlName="codzona" matInput #input id="nomruta"  autocomplete="off"placeholder="codzona"  required>
+            
+            <span *ngIf="this.firstFormGroup.get('codzona')?.errors?.['minlength']">
+              (Debe tener como mínimo 4 caracteres)
+            </span>
+          </mat-form-field>
+        
+  
+          <mat-form-field appearance="outline" style="position: relative; left: 2%;">
+            <mat-label>CODPUNTO</mat-label>
+            <input formControlName="codpunto" matInput #input id="nomruta" autocomplete="off" placeholder="codpunto" required>
+            <span *ngIf="this.firstFormGroup.get('codpunto')?.errors?.['minlength']">
+              (Debe tener como mínimo 4 caracteres)
+            </span>
+          </mat-form-field>
+        
+          <mat-form-field appearance="outline" style="position: relative; left: 4%;">
+            <mat-label>USUARIO</mat-label>
+            <input formControlName="nombre" matInput #input id="nomruta" autocomplete="off" placeholder="usuario">
+          </mat-form-field>
+          <br>
+        -->
+      <mat-form-field appearance="fill">
+        <mat-label>Fecha de registro</mat-label>
+        <input matInput [matDatepicker]="picker" formControlName="fecha_creacion">
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+       
+  <!--   
+            <mat-form-field appearance="outline" style="position: relative; left: 10%;">
+            <mat-label>fecha_creacion</mat-label>
+            <input formControlName="fecha_creacion" matInput #input id="nomruta" placeholder="fecha_creacion">
+          </mat-form-field>
+          
+  
+          <mat-form-field appearance="outline" >
+            <mat-label>login_registro</mat-label>
+            <input formControlName="login_registro" matInput #input id="nomruta" placeholder="login_registro">
+          </mat-form-field>
+        -->
+  
+          <!--
+          <mat-form-field appearance="outline" style="position: relative; left: 4%;">
+            <mat-label>Descripcion</mat-label>
+            <input formControlName="descripcion" matInput #input id="nomruta" placeholder="descripcion">
+          </mat-form-field>
+        -->
+        
+        <mat-form-field class="example-full-width" appearance="fill" style="position: relative; left: 6%;">
+          <mat-label>Descripcion</mat-label>
+          <textarea matInput placeholder="..." formControlName="descripcion"></textarea>
+        </mat-form-field>
+     
+        <br>
+        <br><br>
+  
+        
+  
+  
+      <button  (click)="onSubmit()" mat-raised-button matTooltip="Guardar" style="position: relative; left: 40%;" color="primary">
+        <mat-icon>save_as</mat-icon>
+  
+      </button>
+     
+  
+  
+    </form>
+  
+  </mat-card>
+</div>
